@@ -1,4 +1,7 @@
 # 8919lab2
+git add .
+git commit -m "Update for submission"
+git push origin main
 
 "url": "https://None@my8919lab2.scm.azurewebsites.net/my8919lab2.git"
 
@@ -7,6 +10,9 @@ az webapp deployment user set --user-name shaoxian8919lab2 --password Password_1
 (base) shaoxianduan@DuanM4 8919lab2 % az webapp deployment source config-local-git --resource-group 8919lab2 --name my8919lab2
 {
   "url": "https://shaoxian8919lab2@my8919lab2.scm.azurewebsites.net/my8919lab2.git"
+          https://my8919lab2.azurewebsites.net/
+
+az webapp log tail --resource-group 8919lab2 --name my8919lab2
 
 
 # CST8919 Lab 2: Building a Web App with Threat Detection using Azure Monitor and KQL
