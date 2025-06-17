@@ -11,6 +11,10 @@ logger = logging.getLogger(__name__)
 # 模拟用户数据库
 USERS = {"admin": "password123"}
 
+@app.route('/')
+def home():
+    return "Welcome to 8919 Lab 2"
+
 @app.route('/login', methods=['POST'])
 def login():
     username = request.form.get('username')
@@ -29,4 +33,3 @@ def login():
 
 if __name__ == '__main__':
     app.run(debug=True)
-    
