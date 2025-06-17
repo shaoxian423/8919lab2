@@ -4,11 +4,11 @@ import sys
 
 app = Flask(__name__)
 
-# 配置日志输出到标准输出
+# configure logging
 logging.basicConfig(stream=sys.stdout, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# 模拟用户数据库
+# mock user database
 USERS = {"admin": "password123"}
 
 @app.route('/')
@@ -32,4 +32,4 @@ def login():
         return {"status": "error", "message": "Invalid credentials"}, 401
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8000)  # 匹配 Azure 默认端口
+    app.run(host='0.0.0.0', port=8000)  # change port to 8000
