@@ -1,11 +1,11 @@
 from flask import Flask, request
 import logging
-import os
+import sys
 
 app = Flask(__name__)
 
-# 配置日志
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+# 配置日志输出到标准输出
+logging.basicConfig(stream=sys.stdout, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 # 模拟用户数据库
@@ -32,4 +32,4 @@ def login():
         return {"status": "error", "message": "Invalid credentials"}, 401
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=8000)  # 匹配 Azure 默认端口
