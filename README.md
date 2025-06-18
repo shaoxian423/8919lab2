@@ -1,11 +1,10 @@
-## Video Demonstration
+## 🎥 Video Demonstration
 
-Here is the related video content:
+[![Watch the video](https://img.youtube.com/vi/S-MBQgTe8c8/hqdefault.jpg)](https://www.youtube.com/watch?v=S-MBQgTe8c8)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/S-MBQgTe8c8" frameborder="0" allowfullscreen></iframe>
+Click the image above or [watch the demo on YouTube](https://www.youtube.com/watch?v=S-MBQgTe8c8).
 
-
-# command List
+## command List
 1. Creat resourse group
 az group create --name 8919lab2 --location canadacentral
 ![Logo](pics/1.png)
