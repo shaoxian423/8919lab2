@@ -1,33 +1,8 @@
-# 8919lab2
-git add .
-git commit -m "Update for submission"
-git push origin main
-git push azure main
+## Video Demonstration
 
-"url": "https://None@my8919lab2.scm.azurewebsites.net/my8919lab2.git"
+Here is the related video content:
 
-az webapp deployment user set --user-name shaoxian8919lab2 --password Password_1234
-
-(base) shaoxianduan@DuanM4 8919lab2 % az webapp deployment source config-local-git --resource-group 8919lab2 --name my8919lab2
-
-
-AppServiceConsoleLogs
-| where ResultDescription contains "Login failed"
-| where TimeGenerated > ago(15m)
-| project TimeGenerated, ResultDescription
-| take 10
-{
-  "url": "https://shaoxian8919lab2@my8919lab2.scm.azurewebsites.net/my8919lab2.git"
-          https://my8919lab2.azurewebsites.net/
-
-az webapp log tail --resource-group 8919lab2 --name my8919lab2
-
-
-AppServiceConsoleLogs
-| where ResultDescription contains "Login failed"
-| where TimeGenerated > ago(24h)
-| summarize FailedLogins = count() by bin(TimeGenerated, 5m)
-| where FailedLogins > 5
+<iframe width="560" height="315" src="https://www.youtube.com/embed/S-MBQgTe8c8" frameborder="0" allowfullscreen></iframe>
 
 
 # command List
