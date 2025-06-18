@@ -4,11 +4,11 @@ import sys
 
 app = Flask(__name__)
 
-# configure logging
+# 配置日志到标准输出
 logging.basicConfig(stream=sys.stdout, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# database simulation
+# 模拟用户数据库
 USERS = {"admin": "password123"}
 
 @app.route('/')
@@ -17,7 +17,6 @@ def home():
 
 @app.route('/login', methods=['POST'])
 def login():
-    # Check if the request is JSON or form data
     if request.is_json:
         data = request.get_json()
     else:
