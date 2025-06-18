@@ -2,17 +2,32 @@
 git add .
 git commit -m "Update for submission"
 git push origin main
+git push azure main
 
 "url": "https://None@my8919lab2.scm.azurewebsites.net/my8919lab2.git"
 
 az webapp deployment user set --user-name shaoxian8919lab2 --password Password_1234
 
 (base) shaoxianduan@DuanM4 8919lab2 % az webapp deployment source config-local-git --resource-group 8919lab2 --name my8919lab2
+
+
+AppServiceConsoleLogs
+| where ResultDescription contains "Login failed"
+| where TimeGenerated > ago(15m)
+| project TimeGenerated, ResultDescription
+| take 10
 {
   "url": "https://shaoxian8919lab2@my8919lab2.scm.azurewebsites.net/my8919lab2.git"
           https://my8919lab2.azurewebsites.net/
 
 az webapp log tail --resource-group 8919lab2 --name my8919lab2
+
+
+AppServiceConsoleLogs
+| where ResultDescription contains "Login failed"
+| where TimeGenerated > ago(24h)
+| summarize FailedLogins = count() by bin(TimeGenerated, 5m)
+| where FailedLogins > 5
 
 
 # CST8919 Lab 2: Building a Web App with Threat Detection using Azure Monitor and KQL
