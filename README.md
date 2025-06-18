@@ -30,6 +30,30 @@ AppServiceConsoleLogs
 | where FailedLogins > 5
 
 
+# command List
+1. Creat resourse group
+az group create --name 8919lab2 --location canadacentral
+![Logo](pics/1.png)
+2. Creat App Servide
+az appservice plan create --name 8919lab2Plan --resource-group 8919lab2 --sku FREE --location canadacentral --is-linuxaz 
+
+![Logo](pics/2.png)
+3. Creat Web App
+az webapp create --resource-group 8919lab2 --plan 8919lab2Plan --name my8919lab2 --runtime "PYTHON|3.9" --deployment-local-git
+![Logo](pics/3.png)
+
+4. config Git remote
+git remote add azure https://shaoxian8919lab2@my8919lab2.scm.azurewebsites.net/my8919lab2.git
+![Logo](pics/4.png)
+5. Deploy to Azure
+git add .
+git commit -m "Deploy Flask app with Python 3.9"
+git push azure main
+![Logo](pics/5.png)
+6. Test Deploy
+![Logo](pics/6.png)
+![Logo](pics/7.png)
+![Logo](pics/8.png)
 # CST8919 Lab 2: Building a Web App with Threat Detection using Azure Monitor and KQL
 
 ## Objective

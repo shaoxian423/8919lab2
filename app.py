@@ -4,11 +4,11 @@ import sys
 
 app = Flask(__name__)
 
-# 配置日志到标准输出
+# configure logging
 logging.basicConfig(stream=sys.stdout, level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-# 模拟用户数据库
+# daemonstration users
 USERS = {"admin": "password123"}
 
 @app.route('/')
